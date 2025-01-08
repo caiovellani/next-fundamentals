@@ -1,4 +1,4 @@
-"use client";
+import { AddToCartButton } from "./add-to-cart-button";
 
 type ProductProps = {
 	params: {
@@ -14,19 +14,13 @@ export default function Product({ params }: ProductProps) {
 
 	console.log(params);
 
-	function addToCart() {
-		console.log("Adicionou ao carrinho");
-	}
-
 	return (
 		<div>
 			<p>Product: {productId}</p>
 			<p>Size: {size}</p>
 			<p>Color: {color}</p>
 
-			<button type="button" onClick={addToCart}>
-				Adicionar ao carrinho
-			</button>
+			<AddToCartButton />
 		</div>
 	);
 }
