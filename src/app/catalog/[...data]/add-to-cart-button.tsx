@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
-export function AddToCartButton() {
+export function AddToCartButton({ children }: { children: ReactNode }) {
 	const [count, setCount] = useState(0);
 
 	function addToCart() {
@@ -10,8 +10,11 @@ export function AddToCartButton() {
 	}
 
 	return (
-		<button onClick={addToCart} type="button">
-			Adicionar ao carrinho {count}
-		</button>
+		<div>
+			<button onClick={addToCart} type="button">
+				Adicionar ao carrinho {count}
+			</button>
+			{children}
+		</div>
 	);
 }
